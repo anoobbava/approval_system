@@ -37,6 +37,7 @@ group :test do
   gem 'factory_girl_rails'
   gem 'database_cleaner', '~> 1.5'
   gem 'faker', '~> 1.6.1'
+  gem 'rails-controller-testing', '~> 0.0.3'
 end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
