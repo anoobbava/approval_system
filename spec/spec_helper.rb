@@ -1,7 +1,14 @@
+require 'simplecov'
+require "codeclimate-test-reporter"
+CodeClimate::TestReporter.start
+
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
-
+SimpleCov.start do
+  add_group 'Controllers', 'app/controllers'
+  add_group 'Models', 'app/models'
+end
 RSpec.configure do |config|
   config.include Devise::Test::ControllerHelpers, type: :controller
   config.expect_with :rspec do |expectations|

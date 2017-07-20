@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem "codeclimate-test-reporter", group: :test, require: nil
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
@@ -17,6 +18,7 @@ gem 'devise'
 gem 'rake', '< 11.0'
 gem 'bootstrap', git: 'https://github.com/twbs/bootstrap-rubygem'
 gem 'jquery-rails'
+gem 'pg',group: :production
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara', '~> 2.13'
@@ -32,6 +34,7 @@ group :development do
   gem 'pry'
 end
 group :test do
+  gem 'simplecov'
   gem 'rspec'
   gem 'shoulda-matchers'
   gem 'factory_girl_rails'
@@ -40,7 +43,3 @@ group :test do
   gem 'rails-controller-testing', '~> 0.0.3'
 end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
-group :production do
-  gem 'pg'
-end
