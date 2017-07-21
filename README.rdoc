@@ -1,0 +1,9 @@
+== README
+
+{<img src="https://codeclimate.com/github/anoobbava/approval_system/badges/gpa.svg" />}[https://codeclimate.com/github/anoobbava/approval_system]
+{<img src="https://codeclimate.com/github/anoobbava/approval_system/badges/coverage.svg" />}[https://codeclimate.com/github/anoobbava/approval_system/coverage]
+{<img src="https://codeclimate.com/github/anoobbava/approval_system/badges/issue_count.svg" />}[https://codeclimate.com/github/anoobbava/approval_system]
+{<img src="https://travis-ci.org/anoobbava/approval_system.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/anoobbava/approval_system]
+
+== Approval system:
+this is a web application which deals with the Approval of Requirements.
