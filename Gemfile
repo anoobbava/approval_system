@@ -22,7 +22,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~> 3.6'
   gem 'sqlite3'
 end
 
@@ -36,7 +36,7 @@ end
 group :test do
   gem 'simplecov'
   gem "codeclimate-test-reporter", "~> 1.0.0"
-  gem 'rspec'
+  gem 'rspec', '~> 3.6'
   gem 'shoulda-matchers'
   gem 'factory_girl_rails'
   gem 'database_cleaner', '~> 1.5'

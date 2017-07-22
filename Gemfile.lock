@@ -287,8 +287,8 @@ DEPENDENCIES
   rails (~> 5.1.1)
   rails-controller-testing (~> 0.0.3)
   rake (< 11.0)
-  rspec
-  rspec-rails
+  rspec (~> 3.6)
+  rspec-rails (~> 3.6)
   sass-rails (~> 5.0)
   selenium-webdriver
   sendgrid-ruby
