@@ -17,6 +17,7 @@ gem 'devise'
 gem 'rake', '< 11.0'
 gem 'bootstrap', git: 'https://github.com/twbs/bootstrap-rubygem'
 gem 'jquery-rails'
+gem 'sendgrid-ruby'
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara', '~> 2.13'

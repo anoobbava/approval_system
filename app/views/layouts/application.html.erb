@@ -8,8 +8,14 @@
   </head>
   <%= render 'layouts/navbar'%>
   <div class="container">
-    <body>
-      <%= yield %>
-    </body>
+    <div class= 'row'>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+    </div>
+    <div class="row">
+      <body>
+        <%= yield %>
+      </body>
+    </div>
   </div>
 </html>
