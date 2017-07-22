@@ -3,7 +3,8 @@ require 'pry'
 RSpec.describe UsersController, type: :controller do
 
   before(:all) do
-    @user = FactoryGirl.create(:user_login)
+    @user = FactoryGirl.create(:user_login_valid)
+    @user.confirm
   end
 
   it 'redirect to user signin' do
