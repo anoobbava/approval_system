@@ -1,0 +1,9 @@
+<div class="form-group">
+  <p> name<%= @request_detail.name %></p>
+  <p>description <%= @request_detail.description%></p>
+  <p>requested_by <%= @request_detail.requested_by%></p>
+  <p>approved_by <%= @request_detail.approved_by%></p>
+</div>
+<div>
+  <%= button_to 'approve', action: "approve"%>
+</div>

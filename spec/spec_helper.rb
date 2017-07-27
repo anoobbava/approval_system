@@ -3,7 +3,7 @@ require 'simplecov'
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
-
+SimpleCov.start
 RSpec.configure do |config|
   config.include Devise::Test::ControllerHelpers, type: :controller
   config.expect_with :rspec do |expectations|
@@ -17,6 +17,7 @@ RSpec.configure do |config|
     mocks.verify_partial_doubles = true
   end
 
+  ActiveRecord::Migration.maintain_test_schema!
 # The settings below are suggested to provide a good initial experience
 # with RSpec, but feel free to customize to your heart's content.
 =begin

@@ -1,0 +1,7 @@
+<div>
+Pending Tasks:
+--------------
+  <% @requests_for_approvals.each do |request|%>
+    <%= link_to 'request.name', request_approval_path(request)%>
+  <% end %>
+</div>
