@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_scope :user do
     root "devise/sessions#new"
   end
-
-
   resources :users
+  resources :request_approvals
+  post "/request_approvals/:id/approve", :to => "request_approvals#approve"
 end
