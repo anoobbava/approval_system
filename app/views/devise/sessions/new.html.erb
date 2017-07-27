@@ -1,52 +1,40 @@
-<div class="font_family">
-<h2>Log in</h2>
-
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <form class="form-horizontal">
-    <div class="form-group">
-      <div class="row">
-        <div class="col-md-4">
-          <%= f.label :email%><br />
-        </div>
-        <div class="col-md-4">
-          <%= f.email_field :email, autofocus: true, required: true, class: 'form-control'%>
-        </div>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <div class="row">
-        <div class="col-md-4">
-          <%= f.label :password%><br />
-        </div>
-        <div class="col-md-4">
-          <%= f.password_field :password, autocomplete: "off",required: true, class: 'form-control' %>
-        </div>
-      </div>
-    </div>
-
-    <% if devise_mapping.rememberable? -%>
-      <div class="form-group">
-        <%= f.check_box :remember_me %>
-        <%= f.label :remember_me%>
-      </div>
-    <% end -%>
-
-    <div class="form-group">
-      <div class="row">
-      <div class="col-md-4">
-      </div>
-        <div class="col-md-4">
-          <%= f.submit "Log in", class: 'btn btn-primary'%>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4">
+        <div class="login-panel panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Please Sign In</h3>
+          </div>
+          <div class="panel-body">
+            <form role="form">
+              <fieldset>
+                <div class="form-group">
+                    <%= f.email_field :email, autofocus: true, required: true, class: 'form-control', placeholder: "E-mail"%>
+                </div>
+                <div class="form-group">
+                     <%= f.password_field :password, autocomplete: "off",required: true, class: 'form-control' , placeholder: "Password"%>
+                </div>
+                <% if devise_mapping.rememberable? -%>
+                  <div class="checkbox">
+                    <label>
+                       <%= f.check_box :remember_me %>
+                       <%= f.label :remember_me%>
+                    </label>
+                  </div>
+                <% end -%>
+                <%= f.submit "Log in", class: 'btn btn-lg btn-success btn-block'%>
+              </fieldset>
+            </form>
+          </div>
         </div>
       </div>
     </div>
-  </form>
+  </div>
 <% end %>
-  <div class="row">
-      <div class="col-md-4">
-      </div>
-      <div class="col-md-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4">
         <%= render "devise/shared/links" %>
       </div>
     </div>

@@ -14,7 +14,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">New Approvals <span class="sr-only">(current)</span></a></li>
+        <li class="active"><%= link_to 'New Approvals ', new_request_approval_path %></li>
         <li><a href="#"> Pending Approvals</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -23,6 +23,7 @@
           <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
         <% else %>
           <li><%= link_to 'Login', new_user_session_path%></li>
+          <li><%= link_to 'SignUp', new_user_registration_path%></li>
         <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
