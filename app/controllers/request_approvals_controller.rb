@@ -9,7 +9,6 @@ class RequestApprovalsController < ApplicationController
 
   def create
     @request_approval = RequestApproval.new(request_params)
-    binding.pry
     @request_approval.requested_by = current_user.id
     if @request_approval.save
       flash[:success] = 'Request submitted successfully'
