@@ -5,6 +5,7 @@ class RequestApprovalsController < ApplicationController
 
   def new
     @request_approval = RequestApproval.new
+    @users= User.all
   end
 
   def create
