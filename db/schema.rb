@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170724094826) do
+ActiveRecord::Schema.define(version: 20170825060128) do
 
   create_table "request_approvals", force: :cascade do |t|
     t.string "name"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20170724094826) do
     t.datetime "updated_at", null: false
     t.string "approved_status", default: "NOT APPROVED"
     t.datetime "approved_at"
+    t.string "avatar"
   end
 
   create_table "users", force: :cascade do |t|
