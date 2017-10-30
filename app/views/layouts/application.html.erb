@@ -10,12 +10,12 @@
   <div class="container">
     <div class= 'row'>
       <%flash.each do |name, msg| %>
-        <% if name == 'error'%>
-          <%= content_tag :div, msg, class: "alert alert-danger" %>
-        <% elsif name == 'notice' %>
+        <% if name == 'notice' %>
           <%= content_tag :div, msg, class: "alert alert-info" %>
         <% elsif name == 'success' %>
           <%= content_tag :div, msg, class: "alert alert-success" %>
+        <%else%>
+          <%= content_tag :div, msg, class: "alert alert-danger" %>
         <% end%>
       <% end %>
     </div>
