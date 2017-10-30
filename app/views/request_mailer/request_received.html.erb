@@ -1,0 +1,6 @@
+<div class="row">
+  <h3>Hi<%= @user.email%></h3>
+  <p>Your request received and the Request number:<%= @request.id%>.Will inform once the request is approved</p>
+  <h4><p><%= link_to 'Check the status of the request', request_approval_url(@request)%></p></h4>
+  <p><%#= link_to 'Go to Approval System', root_path%></p>
+</div>

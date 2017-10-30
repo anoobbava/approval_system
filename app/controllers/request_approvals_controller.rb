@@ -5,7 +5,7 @@ class RequestApprovalsController < ApplicationController
 
   def new
     @request_approval = RequestApproval.new
-    @users= User.all
+    @users = User.all
   end
 
   def create
@@ -13,6 +13,7 @@ class RequestApprovalsController < ApplicationController
     @request_approval.requested_by = current_user.id
     if @request_approval.save
       flash[:success] = 'Request submitted successfully'
+      RequestMailer.request_received(current_user, @request_approval).deliver_now
       redirect_to @request_approval
     else
       flash[:error] = 'error on request creation'
