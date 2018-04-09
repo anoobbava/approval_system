@@ -13,7 +13,8 @@ class RequestApprovalsController < ApplicationController
     @request_approval.requester = current_user
     if @request_approval.save
       flash[:success] = 'Request submitted successfully'
-      RequestMailer.request_received(current_user, @request_approval).deliver_later
+      RequestMailer.request_received(current_user,
+                                     @request_approval).deliver_later
       redirect_to @request_approval
     else
       flash[:error] = 'error on request creation'

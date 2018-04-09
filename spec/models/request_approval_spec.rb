@@ -15,11 +15,11 @@ RSpec.describe RequestApproval, type: :model do
   end
 
   it 'check the requester' do
-    expect(@valid_request.requester_id).to eq(2)
+    expect(@valid_request.requester_id).to be_a(Integer)
   end
 
   it 'check the approver' do
-    expect(@valid_request.approver_id).to eq(3)
+    expect(@valid_request.approver_id).to be_a(Integer)
   end
 
   it 'requester id is nil ' do

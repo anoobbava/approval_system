@@ -4,7 +4,7 @@ class RequestApproval < ApplicationRecord
   belongs_to :approver, class_name: 'User'
   belongs_to :requester, class_name: 'User'
 
-  scope :to_be_approved, -> user { where "approver_id = ? AND approved_status = ?", user, 'NOT APPROVED' }
+  scope :to_be_approved, ->(user) { where 'approver_id = ? AND approved_status = ?', user, 'NOT APPROVED' }
 
   def mark_as_approved
     self.approved_status = 'APPROVED'
