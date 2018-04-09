@@ -1,0 +1,9 @@
+<div class="row">
+  <h3>Hi <%= @user.email%></h3>
+  <p>You have <%=@requests.count%> Requests Pending</p>
+
+  <p> Please Approve ASAP</p>
+  <%@requests.each do |request|%>
+    <h5><p><%= link_to request.name, request_approval_url(request)%></p></h5>
+  <%end%>
+</div>
