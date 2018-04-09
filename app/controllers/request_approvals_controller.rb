@@ -5,14 +5,16 @@ class RequestApprovalsController < ApplicationController
 
   def new
     @request_approval = RequestApproval.new
-    @users= User.all
+    @users = User.all
   end
 
   def create
     @request_approval = RequestApproval.new(request_params)
-    @request_approval.requested_by = current_user.id
+    @request_approval.requester = current_user
     if @request_approval.save
       flash[:success] = 'Request submitted successfully'
+      RequestMailer.request_received(current_user,
+                                     @request_approval).deliver_later
       redirect_to @request_approval
     else
       flash[:error] = 'error on request creation'
@@ -27,7 +29,7 @@ class RequestApprovalsController < ApplicationController
   end
 
   def index
-    @requests_for_approvals = RequestApproval.to_be_approved(current_user.id)
+    @requests_for_approvals = RequestApproval.to_be_approved(current_user)
   end
 
   def edit
@@ -54,6 +56,6 @@ class RequestApprovalsController < ApplicationController
   end
 
   def request_params
-    params.require(:request_approval).permit(:name, :description, :approved_by)
+    params.require(:request_approval).permit(:name, :description, :approver_id)
   end
 end

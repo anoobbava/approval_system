@@ -3,7 +3,7 @@
     <%= f.input :name, label: 'Request title' %>
     <%= f.input :description, label: 'Request description' %>
     <%=f.label 'Approver name'%>
-    <%= f.select(:approved_by, options_from_collection_for_select(@users, :id, :email),
+    <%= f.select(:approver_id, options_from_collection_for_select(@users, :id, :email),
                  prompt: 'Please Select')%> </br>
     <%= f.button :submit %>
   <% end %>

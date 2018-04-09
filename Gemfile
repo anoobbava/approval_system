@@ -4,7 +4,7 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
-ruby '2.3.1'
+ruby '2.4.1'
 gem 'rails', '~> 5.1.1'
 gem 'puma', '~> 3.7'
 gem 'uglifier', '>= 1.3.0'
@@ -19,6 +19,8 @@ gem 'jquery-rails'
 gem 'sendgrid-ruby'
 gem 'simple_form', '~> 3.5'
 gem 'carrierwave', '~> 1.0'
+gem 'delayed_job_active_record', '~> 4.1', '>= 4.1.2'
+gem 'delayed_job_recurring'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -29,6 +31,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'letter_opener'
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
@@ -37,7 +40,7 @@ group :development do
 end
 group :test do
   gem 'simplecov'
-  gem "codeclimate-test-reporter", "~> 1.0.0"
+  gem 'codeclimate-test-reporter', '~> 1.0.0'
   gem 'rspec', '~> 3.6'
   gem 'shoulda-matchers'
   gem 'factory_girl_rails'
