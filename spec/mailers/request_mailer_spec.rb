@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 RSpec.describe RequestMailer, type: :mailer do
-
   before(:all) do
     ActionMailer::Base.delivery_method = :test
     ActionMailer::Base.perform_deliveries = true
